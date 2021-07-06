@@ -14,6 +14,7 @@ defmodule FindmyPersonalWeb.ChannelCase do
   by setting `use FindmyPersonalWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
+  alias Ecto.Adapters.SQL.Sandbox
 
   use ExUnit.CaseTemplate
 
@@ -29,10 +30,10 @@ defmodule FindmyPersonalWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(FindmyPersonal.Repo)
+    :ok = Sandbox.checkout(FindmyPersonal.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(FindmyPersonal.Repo, {:shared, self()})
+      Sandbox.mode(FindmyPersonal.Repo, {:shared, self()})
     end
 
     :ok

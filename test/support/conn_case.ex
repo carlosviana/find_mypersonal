@@ -15,6 +15,8 @@ defmodule FindmyPersonalWeb.ConnCase do
   this option is not recommended for other databases.
   """
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   use ExUnit.CaseTemplate
 
   using do
@@ -32,10 +34,10 @@ defmodule FindmyPersonalWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(FindmyPersonal.Repo)
+    :ok = Sandbox.checkout(FindmyPersonal.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(FindmyPersonal.Repo, {:shared, self()})
+      Sandbox.mode(FindmyPersonal.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
