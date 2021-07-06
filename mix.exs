@@ -1,4 +1,4 @@
-defmodule FindMyPersonal.MixProject do
+defmodule FindmyPersonal.MixProject do
   use Mix.Project
 
   @github_url "https://github.com/carlosviana/findmy_personal"
@@ -42,7 +42,7 @@ defmodule FindMyPersonal.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {FindMyPersonal.Application, []},
+      mod: {FindmyPersonal.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
