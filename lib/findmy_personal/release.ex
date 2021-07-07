@@ -1,4 +1,7 @@
 defmodule FindmyPersonal.Release do
+  @moduledoc """
+  false
+  """
   @app :findmy_personal
 
   def migrate do
