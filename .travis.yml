@@ -11,6 +11,15 @@ addons:
 services:
   - postgresql
 
+env:
+  global:
+    - GCP_PROJECT_ID=blissful-star-318316
+    - IMAGE=gcr.io/blissful-star-318316/findmy_personal
+    - CLOUD_RUN_SERVICE=blissful-star-318316
+    - CLOUD_RUN_REGION=us-central1
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+    - SHA=$(git rev-parse HEAD)
+
 script:
   - mix format --check-formatted --dry-run
   - mix credo --strict
