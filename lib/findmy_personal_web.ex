@@ -23,6 +23,7 @@ defmodule FindmyPersonalWeb do
 
       import Plug.Conn
       import FindmyPersonalWeb.Gettext
+
       alias FindmyPersonalWeb.Router.Helpers, as: Routes
     end
   end
