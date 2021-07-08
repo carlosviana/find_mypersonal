@@ -1,4 +1,4 @@
-echo "_______________START BUILD_________________"
+echo "_____________START BUILD_______________"
 set -ex;
     docker build -t "${IMAGE}:$SHA" . && \
     docker push "${IMAGE}:$SHA" && \
@@ -11,4 +11,4 @@ set -ex;
         --region="${CLOUD_RUN_REGION}" \
         --allow-unauthenticated;
     set +x
-echo "_______________DEPLOY FINISHED_________________"
+echo "_____________DEPLOY FINISHED_______________"
