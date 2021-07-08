@@ -9,6 +9,16 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+To start your Phoenix server Container-Prod:
+
+  * configure a `.env` with:
+    * DATABASE_URL
+    * SECRET_KEY_BASE
+    * OPITIONAL: POOL_SIZE and PORT
+  * run `docker build -t IMAGE_NAME:TAG`
+  * run `docker run --env-file .env -p 8082:4000 IMAGE_NAME:TAG`
+
+
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
 ## Learn more
