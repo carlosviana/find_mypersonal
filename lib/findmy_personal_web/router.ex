@@ -22,7 +22,6 @@ defmodule FindmyPersonalWeb.Router do
 
     resources "/teacher", TeacherController
 
-
     live "/", PageLive, :index
   end
 

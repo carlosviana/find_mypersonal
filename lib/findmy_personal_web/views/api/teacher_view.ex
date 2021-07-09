@@ -10,11 +10,13 @@ defmodule FindmyPersonalWeb.Api.TeacherView do
   end
 
   def render("teacher.json", %{teacher: teacher}) do
-    %{id: teacher.id,
+    %{
+      id: teacher.id,
       avatar_url: teacher.avatar_url,
       name: teacher.name,
       birth_date: teacher.birth_date,
       education_level: teacher.education_level,
-      class_type: teacher.class_type}
+      class_type: teacher.class_type
+    }
   end
 end
