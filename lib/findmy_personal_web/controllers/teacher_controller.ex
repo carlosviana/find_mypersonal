@@ -23,7 +23,7 @@ defmodule FindmyPersonalWeb.TeacherController do
     case Teachers.create_teacher(teacher_params) do
       {:ok, teacher} ->
         conn
-        |> put_flash(:info, "Teacher created successfully.")
+        |> put_flash(:info, "Teacher created successfully!")
         |> redirect(to: Routes.teacher_path(conn, :show, teacher))
 
       {:error, %Ecto.Changeset{} = changeset} ->
