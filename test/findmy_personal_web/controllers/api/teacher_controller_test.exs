@@ -50,7 +50,6 @@ defmodule FindmyPersonalWeb.Api.TeacherControllerTest do
       conn = get(conn, Routes.api_teacher_path(conn, :show, id))
 
       assert %{
-               "id" => id,
                "avatar_url" => "some avatar_url",
                "birth_date" => "2010-04-17",
                "class_type" => "some class_type",
@@ -75,7 +74,6 @@ defmodule FindmyPersonalWeb.Api.TeacherControllerTest do
       conn = get(conn, Routes.api_teacher_path(conn, :show, id))
 
       assert %{
-               "id" => id,
                "avatar_url" => "some updated avatar_url",
                "birth_date" => "2011-05-18",
                "class_type" => "some updated class_type",
