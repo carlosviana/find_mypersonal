@@ -50,7 +50,6 @@ defmodule FindmyPersonalWeb.TeacherControllerTest do
 
       conn = get(conn, Routes.teacher_path(conn, :show, id))
       assert html_response(conn, 200) =~ "Name"
-
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
