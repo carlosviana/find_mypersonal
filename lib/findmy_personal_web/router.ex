@@ -31,6 +31,7 @@ defmodule FindmyPersonalWeb.Router do
     pipe_through :api
 
     resources "/teacher", TeacherController, except: [:new, :edit]
+    resources "/members", MemberController
   end
 
   # Enables LiveDashboard only for development

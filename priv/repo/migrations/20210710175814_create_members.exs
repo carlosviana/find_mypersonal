@@ -12,6 +12,5 @@ defmodule FindmyPersonal.Repo.Migrations.CreateMembers do
 
       timestamps()
     end
-
   end
 end
