@@ -2,6 +2,24 @@
 // The MiniCssExtractPlugin is used to separate it out into
 // its own CSS file.
 import "../css/app.scss"
+import "materialize-css"
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems, {});
+
+    var elems = document.querySelectorAll('.datepicker');
+    M.Datepicker.init(elems, {});
+
+    var elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems, {});
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
 
 // webpack automatically bundles all modules in your
 // entry points. Those entry points can be configured
