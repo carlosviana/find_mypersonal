@@ -20,7 +20,9 @@ defmodule FindmyPersonalWeb.Router do
   scope "/", FindmyPersonalWeb do
     pipe_through :browser
 
+    get "/teacher/search", TeacherController, :search
     resources "/teacher", TeacherController
+    resources "/members", MemberController
 
     live "/", PageLive, :index
   end
@@ -30,6 +32,7 @@ defmodule FindmyPersonalWeb.Router do
     pipe_through :api
 
     resources "/teacher", TeacherController, except: [:new, :edit]
+    resources "/members", MemberController
   end
 
   # Enables LiveDashboard only for development
@@ -39,12 +42,12 @@ defmodule FindmyPersonalWeb.Router do
   # If your application does not have an admins-only section yet,
   # you can use Plug.BasicAuth to set up some basic authentication
   # as long as you are also using SSL (which you should anyway).
-  if Mix.env() in [:dev, :test] do
-    import Phoenix.LiveDashboard.Router
+  # if Mix.env() in [:dev, :test] do
+  #   import Phoenix.LiveDashboard.Router
 
-    scope "/" do
-      pipe_through :browser
-      live_dashboard "/dashboard", metrics: FindmyPersonalWeb.Telemetry
-    end
-  end
+  #   scope "/" do
+  #     pipe_through :browser
+  #     live_dashboard "/dashboard", metrics: FindmyPersonalWeb.Telemetry
+  #   end
+  # end
 end

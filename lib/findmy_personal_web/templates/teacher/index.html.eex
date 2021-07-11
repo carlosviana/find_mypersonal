@@ -1,3 +1,12 @@
+<div class="nav-wrapper">
+      <%= form_for @conn, Routes.teacher_path(@conn, :search), [method: :get], fn f ->  %>
+        <div class="input-field">
+            <%= search_input f, :term, name: "filter", id: "search", placeholder: "Digite um instrutor" %>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      <% end %>
+    </div>
 <table>
     <thead>
         <th>Name</th>
